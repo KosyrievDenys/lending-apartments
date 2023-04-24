@@ -2,6 +2,7 @@
   .main {
     display:         flex;
     justify-content: space-between;
+    margin:          0 70px 46px 32px;
     .left {
       min-width:     298px;
       background:    #2252C4;
@@ -9,6 +10,7 @@
       position:      relative;
       top:           0;
       left:          0;
+      padding:       78px 18px 41px 18px;
       .logo {
         height:   70px;
         width:    90px;
@@ -21,26 +23,28 @@
         font-weight: 500;
         font-size:   18px;
         color:       #fff;
-        margin:      78px 0 97px 45px;
+        margin:      0 0 97px 25px;
       }
       ul {
-        margin: 0 0 56px 18px;
+        margin: 0 0 41px 0;
       }
       li {
         margin-bottom: 19px;
         color:         #fff;
         cursor:        pointer;
         transition:    .3s linear;
+        font-size:     22px;
         &:hover {
           color: #EC1D1D;
         }
       }
       a {
-        display: inline-flex;
-        margin:  0 auto 56px;
-      }
-      .socials {
-        margin-bottom: 41px;
+        display:   inline-flex;
+        margin:    0 auto 56px;
+        top:       0;
+        left:      50%;
+        z-index:   2;
+        transform: translateX(-50%);
       }
     }
     .right {
@@ -51,7 +55,7 @@
       margin:         74px 0;
       img {
         height:     calc(100% - 213px);
-        width:      75%;
+        width:      73%;
         position:   absolute;
         top:        50%;
         right:      0;
@@ -66,12 +70,119 @@
         z-index:  2;
       }
       h1 {
-        position: relative;
-        bottom:   0;
-        right:    0;
-        z-index:  2;
+        font-weight:    900;
+        font-size:      72px;
+        color:          #182746;
+        text-transform: uppercase;
+        position:       relative;
+        bottom:         0;
+        right:          0;
+        z-index:        2;
+        line-height:    0.8;
         span {
           font-size: 200px;
+        }
+      }
+    }
+  }
+  .photos {
+    margin: 46px 0 85px 0;
+    h2 {
+      max-width:     300px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media(max-width: 1024px) {
+  .app {
+    .main {
+      margin: 0 0 23px 0;
+      .left {
+        padding: 57px 18px 41px 18px;
+        .logo {
+          height: 70px;
+          width:  90px;
+          top:    20px;
+          left:   15px;
+        }
+        h3 {
+          margin: 0 0 40px 26px;
+        }
+        ul {
+          margin: 0;
+        }
+        li {
+          font-size:     15px;
+          margin-bottom: 13px;
+        }
+        a {
+          margin-bottom: 30px;
+        }
+      }
+      .right {
+        margin: 50px 0;
+        img {
+          height: calc(100% - 150px);
+          width:  69%;
+        }
+        h1 {
+          font-size: 40px;
+          span {
+            font-size: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .app {
+    .main {
+      flex-direction: column;
+      .left {
+        display:   flex;
+        flex-wrap: wrap;
+        padding:   57px 18px 20px 18px;
+        h3 {
+          margin: 0 0 20px 26px;
+        }
+        ul {
+          margin: 0 10px 10px;
+        }
+        .buttons {
+          margin: 0 auto;
+        }
+        a {
+          margin-bottom: 20px;
+        }
+      }
+      .right {
+        max-width:  100%;
+        min-height: 300px;
+        margin:     20px 0;
+        img {
+          max-height: 300px;
+          width:      100%;
+          top:        77%;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 567px) {
+  .app {
+    .main {
+      .right {
+        img {
+          top: 80%;
+        }
+        h1 {
+          span {
+            font-size: 60px;
+          }
         }
       }
     }

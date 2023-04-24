@@ -60,16 +60,18 @@ function App() {
               <li>Кто собственник</li>
               <li>Контакты</li>
             </ul>
-            <a href='#' className='btn color-red'>Выбрать квартиру</a>
-            <div className={cn('socials', styles.socials)}>
-              <img src={viber} alt='' className='icon' />
-              <img src={facebook} alt='' className='icon' />
+            <div className={styles.buttons}>
+              <a href='#' className='btn color-red'>Выбрать квартиру</a>
+              <div className={cn('socials', styles.socials)}>
+                <img src={viber} alt='' className='icon' />
+                <img src={facebook} alt='' className='icon' />
+              </div>
             </div>
           </div>
           <div className={styles.right}>
-            <img src={mainImg} alt='' />
+            <img src={mainImg} alt='' className='border-radius-30px' />
             <h2 className='color-blue'>Квартиры с ремонтом от собственника</h2>
-            <h1><span className='color-red'>0%</span>Без косисий</h1>
+            <h1><span className='color-red'>0%</span>Без комисий</h1>
           </div>
         </section>
         <section className={styles.photos}>
@@ -77,16 +79,16 @@ function App() {
           <div className='swiper swiper-rooms'>
             <div className='swiper-wrapper'>
               <div className='swiper-slide'>
-                <img src={room1} alt='' />
+                <img src={room1} alt='' className='border-radius-30px' />
               </div>
               <div className='swiper-slide'>
-                <img src={room2} alt='' />
+                <img src={room2} alt='' className='border-radius-30px' />
               </div>
               <div className='swiper-slide'>
-                <img src={room3} alt='' />
+                <img src={room3} alt='' className='border-radius-30px' />
               </div>
               <div className='swiper-slide'>
-                <img src={mainImg} alt='' />
+                <img src={mainImg} alt='' className='border-radius-30px' />
               </div>
             </div>
             <div className="swiper-btn swiper-button-prev"></div>
