@@ -8,7 +8,7 @@ import styles from './App.module.scss';
 import arrowCircle from './assets/images/icons/arrow-circle.svg';
 import viber from './assets/images/icons/viber.svg';
 import facebook from './assets/images/icons/facebook.svg';
-import logo from './assets/images/logo.jpg';
+import logo from './assets/images/logo.png';
 import building1 from './assets/images/building1.jpg';
 import buildings1 from './assets/images/buildings1.jpg';
 import host from './assets/images/host.jpg';
@@ -51,8 +51,8 @@ function App() {
       <div className='container'>
         <section className={styles.main}>
           <div className={styles.left}>
-            <img src={logo} alt='' className={styles.logo}/>
-            <p>Квартиры от собственника</p>
+            <img src={logo} alt='' className={styles.logo} />
+            <h3>Квартиры от собственника</h3>
             <ul>
               <li>Главная</li>
               <li>Расположение</li>
@@ -60,10 +60,10 @@ function App() {
               <li>Кто собственник</li>
               <li>Контакты</li>
             </ul>
-            <a href='#' className={cn(styles.btn, 'color-red')}>Выбрать квартиру</a>
-            <div className='socials'>
-              <img src={viber} alt='' />
-              <img src={facebook} alt='' />
+            <a href='#' className='btn color-red'>Выбрать квартиру</a>
+            <div className={cn('socials', styles.socials)}>
+              <img src={viber} alt='' className='icon' />
+              <img src={facebook} alt='' className='icon' />
             </div>
           </div>
           <div className={styles.right}>
@@ -164,8 +164,8 @@ function App() {
             </a>
             <a href='#'>+380 93 537 0000</a>
             <div className='socials'>
-              <img src={viber} alt='' />
-              <img src={facebook} alt='' />
+              <img src={viber} alt='' className='icon' />
+              <img src={facebook} alt='' className='icon' />
             </div>
           </div>
         </footer>

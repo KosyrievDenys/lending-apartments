@@ -33,12 +33,6 @@ section {
   position: relative;
 }
 
-button {
-  cursor:      pointer;
-  transition:  .3s linear;
-  user-select: none;
-}
-
 p {
   font-size:   18px;
   font-weight: 400;
@@ -77,6 +71,10 @@ li {
 
 .color-red {
   color: #EC1D1D;
+  &:hover {
+    color:            #fff;
+    background-color: #EC1D1D;
+  }
 }
 
 .color-blue {
@@ -84,21 +82,28 @@ li {
 }
 
 .btn {
-  max-width: 254px;
-  padding:   9px 30px;
-  background: #FFFFFF;
+  max-width:     254px;
+  padding:       9px 30px;
+  background:    #FFFFFF;
   border-radius: 30px;
+  transition:    .3s linear;
+  white-space:   nowrap;
 }
 
-.icon{
-  width: 49px;
-  height: 49px;
+.icon {
+  width:      49px;
+  height:     49px;
+  transition: .3s linear;
+  &:hover {
+    transform: rotate(45deg);
+  }
 }
 
-.socials{
-  display: flex;
-  align-items: center;
+.socials {
+  display:         flex;
+  align-items:     center;
   justify-content: center;
+  gap:             26px;
 }
 
 @media(max-width: 1024px) {
