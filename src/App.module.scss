@@ -201,6 +201,53 @@
       }
     }
   }
+  .location {
+    padding: 80px 0 100px;
+    h2 {
+      max-width:   745px;
+      margin:      0 0 12px 101px;
+      line-height: 1.2;
+    }
+    .description {
+      width:         493px;
+      padding:       27px 51px 20px 19px;
+      background:    rgba(24, 39, 70, 0.8);
+      border-radius: 34px;
+      position:      absolute;
+      left:          84px;
+      top:           39px;
+      z-index:       1;
+      p {
+        padding-bottom: 15px;
+        color:          #fff;
+      }
+    }
+    .content {
+      min-height:      337px;
+      width:           100%;
+      display:         flex;
+      justify-content: flex-end;
+      position:        relative;
+      left:            0;
+      top:             0;
+    }
+    .buildings {
+      max-width:    546px;
+      max-height:   402px;
+      object-fit:   cover;
+      margin-right: 90px;
+
+    }
+    .building {
+      height:        161px;
+      width:         161px;
+      position:      absolute;
+      top:           320px;
+      right:         12px;
+      z-index:       1;
+      border-radius: 50%;
+    }
+  }
 }
 
 @media(max-width: 1024px) {
@@ -280,6 +327,26 @@
         }
       }
     }
+    .location {
+      padding: 20px 0 20px;
+      .content {
+        justify-content: space-between;
+      }
+      .description {
+        min-width: 340px;
+        position:  relative;
+        top:       0;
+        left:      0;
+      }
+      .buildings {
+        height:       30vw;
+        margin-right: 0;
+      }
+      .building {
+        top:   240px;
+        right: 20%;
+      }
+    }
   }
 }
 
@@ -346,6 +413,16 @@
         }
       }
     }
+    .location {
+      .description {
+        min-width: 50%;
+      }
+    }
+    .location {
+      .building {
+        right: 10%;
+      }
+    }
   }
 }
 
@@ -361,6 +438,21 @@
             font-size: 60px;
           }
         }
+      }
+    }
+    .location {
+      .content {
+        flex-direction: column;
+      }
+      .description {
+        width: 100%;
+      }
+      .buildings {
+        width: 48%;
+      }
+      .building {
+        top:    auto;
+        bottom: 20px;
       }
     }
   }

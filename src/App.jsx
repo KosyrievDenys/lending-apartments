@@ -103,7 +103,7 @@ function App() {
                 <p className={styles.numRooms}>{apartment.numRooms}</p>
                 <h2 className='color-blue'>{apartment.type}</h2>
                 <p className={styles.description}>{apartment.description}</p>
-                <a href='#' className={cn(styles.btn, 'color-red btn')}>Выбрать квартиру</a>
+                <a href='#' className='color-red btn'>Выбрать квартиру</a>
               </div>
               <div className={styles.scheme}>
                 <img src={apartment.scheme} alt='' />
@@ -117,28 +117,30 @@ function App() {
         </section>
         <section className={styles.location}>
           <h2>
-            Все квартиры находятся в Харькове <span>компексе ЖК Левада-2</span> от застройщика АО»Трест Жилстрой-1»
+            Все квартиры находятся в Харькове в <span>компексе ЖК Левада-2</span> от застройщика АО»Трест Жилстрой-1»
           </h2>
-          <div className={styles.description}>
-            <p>
-              Расположение очень удобное: 5 минут до метро проспект Гагарина, 15 минут до центра города пешком
-            </p>
-            <p>
-              Рядом автовокзал и железнодорожная станция Левада
-            </p>
-            <p>
-              Комплекс имеет большую придомовую территорию. Охраняемый многоуровневый паркинг рядом.
-            </p>
-            <p>Рядом школы, детские сады.</p>
-            <p>
-              В комплексе предусмотрены детские площадки, зоны для отдыха и занятий спортом.
-            </p>
-            <p>
-              Весь комплекс состоит из двенадцати 16-ти этажных домов комфорт класса
-            </p>
+          <div className={styles.content}>
+            <div className={styles.description}>
+              <p>
+                Расположение очень удобное: 5 минут до метро проспект Гагарина, 15 минут до центра города пешком
+              </p>
+              <p>
+                Рядом автовокзал и железнодорожная станция Левада
+              </p>
+              <p>
+                Комплекс имеет большую придомовую территорию. Охраняемый многоуровневый паркинг рядом.
+              </p>
+              <p>Рядом школы, детские сады.</p>
+              <p>
+                В комплексе предусмотрены детские площадки, зоны для отдыха и занятий спортом.
+              </p>
+              <p>
+                Весь комплекс состоит из двенадцати 16-ти этажных домов комфорт класса
+              </p>
+            </div>
+            <img src={buildings1} alt='' className={styles.buildings} />
+            <img src={building1} alt='' className={styles.building} />
           </div>
-          <img src={buildings1} alt='' />
-          <img src={building1} alt='' />
         </section>
         <section className={styles.host}>
           <img src={host} alt='' />
