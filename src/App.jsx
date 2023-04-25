@@ -139,14 +139,14 @@ function App() {
               </p>
             </div>
             <img src={buildings1} alt='' className={styles.buildings} />
-            <img src={building1} alt='' className={styles.building} />
+            <img src={building1} alt='' className={cn(styles.building, 'border-radius-50')} />
           </div>
         </section>
         <section className={styles.host}>
-          <img src={host} alt='' />
-          <img src={room2} alt='' />
+          <img src={host} alt='' className={styles.photo} />
+          <img src={room2} alt='' className={cn(styles.room, 'border-radius-50')} />
           <div className={styles.description}>
-            <h2>Добрый день! <span>Меня зовут Тимур</span> и я продаю только свои собственные квартиры.</h2>
+            <h2>Добрый день! <span className='color-blue'>Меня зовут Тимур</span> и я продаю только свои собственные квартиры.</h2>
             <p>
               В каждой из квартир я делаю дизайнерский ремонт. Сам лично контролирую все этапы работ, закупаю материалы
               и
@@ -159,7 +159,7 @@ function App() {
             <p>
               Я подбираю лучшие квартиры у застройщика и отвечаю за качество ремонта.
             </p>
-            <a href='tel:+380 93 537 0000'>Позвонить</a>
+            <a href='tel:+380935370000' className='btn'>Позвонить</a>
           </div>
         </section>
         <footer className={styles.footer}>
