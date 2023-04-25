@@ -107,10 +107,10 @@ function App() {
               </div>
               <div className={styles.scheme}>
                 <img src={apartment.scheme} alt='' />
-              </div>
-              <div className={styles.square}>
-                <span>{apartment.square}</span>
-                Площадь, м2
+                <div className={styles.square}>
+                  <span>{apartment.square}</span>
+                  Площадь, м2
+                </div>
               </div>
             </div>
           ))}

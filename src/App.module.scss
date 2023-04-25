@@ -2,7 +2,7 @@
   .main {
     display:         flex;
     justify-content: space-between;
-    margin:          0 70px 46px 32px;
+    margin:          0 70px 0 32px;
     .left {
       min-width:     298px;
       background:    #2252C4;
@@ -19,16 +19,18 @@
         left:     18px;
       }
       h3 {
-        max-width:   230px;
-        font-weight: 500;
-        font-size:   18px;
-        color:       #fff;
-        margin:      0 0 97px 25px;
+        max-width:      230px;
+        font-weight:    500;
+        font-size:      18px;
+        color:          #fff;
+        margin:         0 0 97px 25px;
+        text-transform: uppercase;
       }
       ul {
-        margin: 0 0 41px 0;
+        margin: 0 0 57px 0;
       }
       li {
+        max-width:     50%;
         margin-bottom: 19px;
         color:         #fff;
         cursor:        pointer;
@@ -48,26 +50,28 @@
       }
     }
     .right {
-      max-width:      490px;
-      text-align:     right;
-      display:        flex;
-      flex-direction: column;
-      margin:         74px 0;
+      max-width:       490px;
+      text-align:      right;
+      display:         flex;
+      flex-direction:  column;
+      justify-content: space-between;
+      margin:          74px 0 30px;
       img {
-        height:     calc(100% - 213px);
+        height:     calc(100% - 210px);
         width:      73%;
         position:   absolute;
-        top:        50%;
+        top:        52%;
         right:      0;
         z-index:    1;
         transform:  translateY(-50%);
         object-fit: cover;
       }
       h2 {
-        position: relative;
-        top:      0;
-        right:    0;
-        z-index:  2;
+        position:     relative;
+        top:          0;
+        right:        0;
+        z-index:      2;
+        margin-right: 15px;
       }
       h1 {
         font-weight:    900;
@@ -79,6 +83,7 @@
         right:          0;
         z-index:        2;
         line-height:    0.8;
+        margin-right:   17px;
         span {
           font-size: 200px;
         }
@@ -102,24 +107,40 @@
       margin:          91px 0 190px;
       &:nth-child(2n-1) {
         .scheme {
-          margin-top: 100px;
+          margin: 107px 63px 0 0;
         }
-        .square{
-          left: 46%;
+        .square {
+          left: -46%;
         }
       }
       &:nth-child(2n) {
         flex-direction: row-reverse;
         .apartmentSelection {
-          margin-top: 100px;
+          margin-top:   146px;
+          padding-left: 20px;
+          .numRooms {
+            left: 14px;
+          }
+          h2 {
+            margin-bottom: 37px;
+          }
+          .description {
+            margin: 0 0 135px 147px;
+          }
+          a {
+            margin: 0 0 0 40px;
+          }
+        }
+        .scheme {
+          margin: 0 0 0 40px;
         }
         .square {
-          left:   32%;
+          left:   81%;
+          bottom: 18%;
         }
       }
       .apartmentSelection {
         max-width:      433px;
-        min-height:     273px;
         color:          #2252C3;
         font-size:      18px;
         font-weight:    400;
@@ -128,17 +149,18 @@
         left:           0;
         display:        flex;
         flex-direction: column;
+        padding-left:   40px;
         .numRooms {
           font-weight: 900;
           font-size:   300px;
           color:       rgba(24, 39, 70, 0.1);
           position:    absolute;
           top:         -70px;
-          left:        0;
+          left:        35px;
         }
         h2 {
           font-weight:   700;
-          margin-bottom: 53px;
+          margin-bottom: 26px;
         }
         .description {
           margin: 0 0 113px 138px;
@@ -146,6 +168,13 @@
         a {
           border: 1px solid #EC1D1D;
           margin: 0 auto;
+        }
+      }
+      .scheme {
+        position: relative;
+        img {
+          max-height: 310px;
+          max-width:  343px;
         }
       }
       .square {
@@ -161,11 +190,13 @@
         font-size:        18px;
         font-weight:      500;
         position:         absolute;
-        bottom: -55px;
+        bottom:           -62px;
+        padding-bottom:   10px;
+        line-height:      1;
         span {
           font-weight: 700;
           font-size:   48px;
-          color: #fff;
+          color:       #fff;
         }
       }
     }
@@ -175,7 +206,7 @@
 @media(max-width: 1024px) {
   .app {
     .main {
-      margin: 0 0 23px 0;
+      margin: 0;
       .left {
         padding: 57px 18px 41px 18px;
         .logo {
@@ -212,6 +243,43 @@
         }
       }
     }
+    .apartments {
+      .apartment {
+        justify-content: space-between;
+        margin:          45px 0 90px;
+        &:nth-child(2n) {
+          .apartmentSelection {
+            a {
+              font-size: 15px;
+              margin:    0 auto;
+            }
+            .description {
+              margin: 0 0 40px 70px;
+            }
+          }
+        }
+        .apartmentSelection {
+          .numRooms {
+            font-size: 150px;
+            top:       -40px;
+          }
+          h2 {
+            font-size: 20px;
+          }
+          .description {
+            margin: 0 0 40px 70px;
+          }
+        }
+        .square {
+          height:    100px;
+          width:     100px;
+          font-size: 14px;
+          span {
+            font-size: 27px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -244,6 +312,37 @@
           max-height: 300px;
           width:      100%;
           top:        77%;
+        }
+      }
+    }
+    .apartments {
+      margin-top: 20px;
+      .apartment {
+        flex-direction: column;
+        margin:         10px 0;
+        &:nth-child(2n-1) {
+          .scheme {
+            margin: 20px 0 0 0;
+          }
+        }
+        &:nth-child(2n) {
+          flex-direction: column;
+          .apartmentSelection {
+            margin-top: 10px;
+            .description {
+              margin: 0 0 20px 70px;
+            }
+          }
+        }
+        .apartmentSelection {
+          .description {
+            margin: 0 0 20px 70px;
+          }
+        }
+        .scheme {
+          .square {
+            display: none;
+          }
         }
       }
     }

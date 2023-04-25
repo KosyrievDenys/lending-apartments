@@ -85,6 +85,8 @@ li {
   user-select:   none;
   position:      relative;
   text-align:    center;
+  font-weight:   700;
+  font-size:     20px;
 }
 
 .icon {
@@ -124,6 +126,9 @@ li {
   .icon {
     width:  39px;
     height: 39px;
+  }
+  .btn {
+    font-size: 15px;
   }
 }
 
