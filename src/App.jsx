@@ -19,6 +19,7 @@ import threeRoom from './assets/images/three-room.jpg';
 import room1 from './assets/images/room1.jpg';
 import room2 from './assets/images/room2.jpg';
 import room3 from './assets/images/room3.jpg';
+import adaptive from './assets/images/adaptive.png';
 
 function App() {
 
@@ -74,38 +75,39 @@ function App() {
             <h1><span className='color-red'>0%</span>Без комисий</h1>
           </div>
         </section>
-        <section className={styles.photos}>
-          <h2>Фото квартир с ремонтом</h2>
-          <div className='swiper swiper-rooms'>
-            <div className='swiper-wrapper'>
-              <div className='swiper-slide'>
-                <img src={room1} alt='' className='border-radius-30px' />
-              </div>
-              <div className='swiper-slide'>
-                <img src={room2} alt='' className='border-radius-30px' />
-              </div>
-              <div className='swiper-slide'>
-                <img src={room3} alt='' className='border-radius-30px' />
-              </div>
-              <div className='swiper-slide'>
-                <img src={mainImg} alt='' className='border-radius-30px' />
-              </div>
-            </div>
-            <div className="swiper-btn swiper-button-prev"></div>
-            <div className="swiper-btn swiper-button-next"></div>
-          </div>
-        </section>
+        {/*<section className={styles.photos}>*/}
+        {/*  <h2>Фото квартир с ремонтом</h2>*/}
+        {/*  <div className='swiper swiper-rooms'>*/}
+        {/*    <div className='swiper-wrapper'>*/}
+        {/*      <div className='swiper-slide'>*/}
+        {/*        <img src={room1} alt='' className='border-radius-30px' />*/}
+        {/*      </div>*/}
+        {/*      <div className='swiper-slide'>*/}
+        {/*        <img src={room2} alt='' className='border-radius-30px' />*/}
+        {/*      </div>*/}
+        {/*      <div className='swiper-slide'>*/}
+        {/*        <img src={room3} alt='' className='border-radius-30px' />*/}
+        {/*      </div>*/}
+        {/*      <div className='swiper-slide'>*/}
+        {/*        <img src={mainImg} alt='' className='border-radius-30px' />*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*    <div className="swiper-btn swiper-button-prev"></div>*/}
+        {/*    <div className="swiper-btn swiper-button-next"></div>*/}
+        {/*  </div>*/}
+        {/*</section>*/}
         <section className={styles.apartments}>
           {apartments.map((apartment, index) => (
             <div className={styles.apartment} key={index}>
-              <div className={styles.description}>
-                {/*<p className={styles.numRooms}>{apartment.numRooms}</p>*/}
-                {apartment.numRooms}
+              <div className={styles.apartmentSelection}>
+                <p className={styles.numRooms}>{apartment.numRooms}</p>
                 <h2 className='color-blue'>{apartment.type}</h2>
-                <p>{apartment.description}</p>
-                <a href='#' className={cn(styles.btn, 'color-red')}>Выбрать квартиру</a>
+                <p className={styles.description}>{apartment.description}</p>
+                <a href='#' className={cn(styles.btn, 'color-red btn')}>Выбрать квартиру</a>
               </div>
-              <div className={styles.scheme}>{apartment.scheme}</div>
+              <div className={styles.scheme}>
+                <img src={apartment.scheme} alt='' />
+              </div>
               <div className={styles.square}>
                 <span>{apartment.square}</span>
                 Площадь, м2
@@ -174,8 +176,7 @@ function App() {
       </div>
       <script src="./assets/libs/swiper/swiper.js"></script>
     </main>
-  )
-    ;
+  );
 }
 
 export default App;
