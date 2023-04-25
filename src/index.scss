@@ -31,6 +31,9 @@ body {
 
 section {
   position: relative;
+  top:      0;
+  left:     0;
+  z-index:  0;
 }
 
 p {
@@ -53,9 +56,17 @@ a {
 }
 
 .container {
-  width:     100%;
   max-width: 1440px;
+  width:     100%;
   padding:   0 20px;
+  margin:    0 auto;
+}
+
+.wrapper {
+  position: relative;
+  top:      0;
+  left:     0;
+  z-index:  0;
 }
 
 li {
@@ -83,15 +94,19 @@ li {
   white-space:   nowrap;
   user-select:   none;
   position:      relative;
+  top:           0;
+  left:          0;
+  z-index:       0;
   text-align:    center;
   font-weight:   700;
   font-size:     20px;
+  display:       inline-flex;
 }
 
 .icon {
-  width:      49px;
   height:     49px;
   transition: .3s linear;
+  cursor:     pointer;
   &:hover {
     transform: rotate(45deg);
   }
@@ -99,7 +114,6 @@ li {
 
 .socials {
   display:         flex;
-  align-items:     center;
   justify-content: center;
   gap:             26px;
 }
