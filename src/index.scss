@@ -126,6 +126,28 @@ li {
   border-radius: 30px;
 }
 
+.swiper {
+  //max-width: 1052px;
+  //width:    100vw;
+  max-width:     635px;
+
+  //padding:   0 80px;
+  //margin:    0 auto;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  //max-width: 100vw;
+  width: 100%;
+  img {
+    max-height:    403px;
+    //max-width:     635px;
+    width:         100%;
+    object-fit:    cover;
+    margin-bottom: 24px;
+  }
+}
+
 @media(max-width: 1024px) {
   p {
     font-size: 14px;
