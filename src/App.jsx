@@ -1,4 +1,5 @@
 import React from "react";
+
 //libs
 import cn from 'classnames';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -58,8 +59,8 @@ function App() {
   ]
 
   return (
-    <>
-      <main className={styles.app}>
+    <div className={styles.app}>
+      <main>
         <section className={styles.main}>
           <div className={cn(styles.container, 'container')}>
             <div className={cn(styles.wrapper, 'wrapper')}>
@@ -165,23 +166,24 @@ function App() {
                 <img src={host} alt='' className={styles.photo} />
                 <img src={room2} alt='' className={cn(styles.room, 'border-radius-50')} />
               </div>
-              <div className={styles.description}>
+              <div>
                 <h2>Добрый день! <span className='color-blue'>Меня зовут Тимур</span> и я продаю только свои собственные
                   квартиры.</h2>
-                <div className={styles.description}></div>
-                <p>
-                  В каждой из квартир я делаю дизайнерский ремонт. Сам лично контролирую все этапы работ, закупаю
-                  материалы
-                  и
-                  мебель.
-                </p>
-                <p>
-                  В моих квартирах все очень удобно и адаптированно к жизни (фото в группе все настоящие, именно так и
-                  выглядят мои квартиры в жизни)
-                </p>
-                <p>
-                  Я подбираю лучшие квартиры у застройщика и отвечаю за качество ремонта.
-                </p>
+                <div className={styles.description}>
+                  <p>
+                    В каждой из квартир я делаю дизайнерский ремонт. Сам лично контролирую все этапы работ, закупаю
+                    материалы
+                    и
+                    мебель.
+                  </p>
+                  <p>
+                    В моих квартирах все очень удобно и адаптированно к жизни (фото в группе все настоящие, именно так и
+                    выглядят мои квартиры в жизни)
+                  </p>
+                  <p>
+                    Я подбираю лучшие квартиры у застройщика и отвечаю за качество ремонта.
+                  </p>
+                </div>
                 <a href='tel:+380935370000' className='btn'>Позвонить</a>
               </div>
             </div>
@@ -204,18 +206,17 @@ function App() {
               </div>
             </div>
             <div className={styles.map}>
-              <iframe height="250px"
-                      src="https://www.google.com.ua/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%84%D0%BB%D0%B8%D0%B7%D0%B0%D0%B2%D0%B5%D1%82%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0,+2,+%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2,+%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+61000/@49.9796449,36.2371059,17z/data=!3m1!4b1!4m5!3m4!1s0x4127a08a0a40d63b:0x77f48f0cb9bebaa4!8m2!3d49.9796449!4d36.2396862"
-                      allowFullScreen="" loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.9676848493627!2d36.239843213082416!3d49.974464571386335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a0633de5be35%3A0xfe34afea8c744246!2z0LLRg9C70LjRhtGPINCE0LvQuNC30LDQstC10YLQuNC90YHRjNC60LAsIDI1LCDQpdCw0YDQutGW0LIsINCl0LDRgNC60ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA2MTAwMA!5e0!3m2!1suk!2sua!4v1682513951550!5m2!1suk!2sua"
+                allowFullScreen="" loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade" className={styles.iframe}></iframe>
               <img src={room3} alt='' />
             </div>
           </div>
         </div>
       </footer>
-    </>
-  )
-    ;
+    </div>
+  );
 }
 
 export default App;
