@@ -126,18 +126,40 @@ li {
   border-radius: 30px;
 }
 
-.swiper {
-  max-width: 635px;
-  overflow:  hidden;
+.app .photos .container .swiper {
+  padding: 0 66px;
 }
 
-.swiper-slide {
-  width: 100%;
-  img {
-    max-height:    403px;
-    width:         100%;
-    object-fit:    cover;
-    margin-bottom: 24px;
+.swiper .swiper-initialized .swiper-horizontal .swiper-backface-hidden {
+  padding: 0 66px;
+}
+
+.swiper {
+  max-width: 785px;
+  width:     100%;
+  padding:   0 66px;
+  & .swiper-button-prev, & .swiper-button-next {
+    height: 38px;
+    width:  38px;
+    &::after {
+      height:           38px;
+      width:            38px;
+      content:          '';
+      background-image: url('./assets/images/icons/arrow-circle.svg');
+      background-size:  cover;
+    }
+  }
+  & .swiper-button-prev {
+    transform: rotate(180deg);
+  }
+  &-slide {
+    width:    100%;
+    overflow: hidden;
+    img {
+      max-height: 403px;
+      width:      100%;
+      object-fit: cover;
+    }
   }
 }
 
@@ -157,5 +179,19 @@ li {
   }
   .btn {
     font-size: 15px;
+  }
+}
+
+@media(max-width: 758px) {
+  .swiper-slide {
+    img {
+      height: 45vw;
+    }
+  }
+}
+
+@media(max-width: 567px) {
+  .swiper .swiper-button-prev, .swiper .swiper-button-next {
+    display: none;
   }
 }

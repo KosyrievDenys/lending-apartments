@@ -443,10 +443,12 @@
     .apartments {
       padding: 45px 0 90px;
       &:nth-child(2n) {
-        padding: 0 0 60px;
-        .apartmentSelection {
-          .description {
-            margin: 0 0 40px 70px;
+        padding: 0;
+        .apartment {
+          .apartmentSelection {
+            .description {
+              margin: 0 0 40px 70px;
+            }
           }
         }
       }
@@ -493,10 +495,10 @@
     }
     .host {
       padding: 103px 0 80px 100px;
-      p {
-        width: 100%;
-        &:last-of-type {
-          margin-bottom: 50px;
+      .description {
+        margin-bottom: 50px;
+        p {
+          width: 100%;
         }
       }
     }
@@ -520,6 +522,7 @@
     .main {
       .wrapper {
         flex-direction: column;
+        margin-right:   0;
       }
       .left {
         display:   flex;
@@ -549,30 +552,28 @@
         }
       }
     }
+    .photos {
+      padding: 45px 0 25px;
+    }
     .apartments {
-      padding: 20px 0 10px;
-      .apartment {
-        flex-direction: column;
-        &:nth-child(2n-1) {
-          .scheme {
-            margin: 20px 0 0 0;
-          }
-        }
-        &:nth-child(2n) {
+      padding: 45px 0 10px;
+      &:nth-child(2n) {
+        .apartment {
           flex-direction: column;
           .apartmentSelection {
-            margin-top: 10px;
-            .description {
-              margin: 0 0 20px 70px;
-            }
+            margin-top: 40px;
           }
         }
+      }
+      .apartment {
+        flex-direction: column;
         .apartmentSelection {
           .description {
             margin: 0 0 20px 70px;
           }
         }
         .scheme {
+          margin: 20px 0 0 0;
           .square {
             display: none;
           }
@@ -580,6 +581,10 @@
       }
     }
     .location {
+      max-width: 100%;
+      h2 {
+        margin: 0 0 12px 0;
+      }
       .description {
         min-width: 50%;
       }
@@ -588,18 +593,19 @@
       }
     }
     .host {
-      padding: 30px 0 169px 0;
+      padding: 30px 0 30px 0;
       .wrapper {
         flex-direction: column;
       }
       .room {
         display: none;
       }
-      p {
-        &:last-of-type {
-          margin-bottom: 30px;
-        }
+      .description {
+        margin-bottom: 30px;
       }
+    }
+    .footer {
+      padding: 20px 0 20px 50px;
     }
   }
 }
@@ -631,6 +637,11 @@
       .building {
         top:    auto;
         bottom: 20px;
+      }
+    }
+    .host {
+      .description {
+        width: 100%;
       }
     }
   }

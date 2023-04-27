@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 
 //libs
 import cn from 'classnames';
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 //assets
 import styles from './App.module.scss';
-import arrowCircle from './assets/images/icons/arrow-circle.svg';
 import viber from './assets/images/icons/viber.svg';
 import facebook from './assets/images/icons/facebook.svg';
 import logo from './assets/images/logo.png';
 import building1 from './assets/images/building1.jpg';
 import buildings1 from './assets/images/buildings1.jpg';
-import host from './assets/images/host.jpg';
+import hostPhoto from './assets/images/host.jpg';
 import mainImg from './assets/images/main.jpg';
 import oneRoom from './assets/images/one-room.jpg';
 import twoRoom from './assets/images/two-room.jpg';
@@ -21,20 +23,30 @@ import room1 from './assets/images/room1.jpg';
 import room2 from './assets/images/room2.jpg';
 import room3 from './assets/images/room3.jpg';
 import adaptive from './assets/images/adaptive.png';
-import 'swiper/swiper.css';
 
 function App() {
 
-  const photos = [
+  const mainSection = useRef(null);
+  const apartmentsSection = useRef(null);
+  const locationSection = useRef(null);
+  const hostSection = useRef(null);
+  const contactsSection = useRef(null);
 
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth',
+    })
+  }
+
+  const photos = [
     { img: room1 },
     { img: adaptive },
     { img: room2 },
     { img: room3 },
+  ];
 
-  ]
-
-  const apartments = [
+  const apartmentsData = [
     {
       numRooms: 1,
       type: 'Однокомнатная квартира',
@@ -56,7 +68,7 @@ function App() {
       square: 78,
       scheme: threeRoom,
     },
-  ]
+  ];
 
   return (
     <div className={styles.app}>
@@ -68,11 +80,11 @@ function App() {
                 <img src={logo} alt='' className={styles.logo} />
                 <h3>Квартиры от собственника</h3>
                 <ul>
-                  <li>Главная</li>
-                  <li>Расположение</li>
-                  <li>Квартиры</li>
-                  <li>Кто <br></br> собственник</li>
-                  <li>Контакты</li>
+                  <li onClick={() => scrollToSection(mainSection)}>Главная</li>
+                  <li onClick={() => scrollToSection(locationSection)}>Расположение</li>
+                  <li onClick={() => scrollToSection(apartmentsSection)}>Квартиры</li>
+                  <li onClick={() => scrollToSection(hostSection)}>Кто <br></br> собственник</li>
+                  <li onClick={() => scrollToSection(contactsSection)}>Контакты</li>
                 </ul>
                 <div className={styles.buttons}>
                   <a href='#' className={cn('btn color-red', styles.btn)}>Выбрать квартиру</a>
@@ -90,14 +102,16 @@ function App() {
             </div>
           </div>
         </section>
-        <section className={styles.photos}>
+        <section ref={mainSection} className={styles.photos}>
           <div className={cn(styles.container, 'container')}>
             <h2>Фото квартир с ремонтом</h2>
             <Swiper
               slidesPerView={'auto'}
               centeredSlides={true}
               grabCursor={true}
-              spaceBetween={10}
+              spaceBetween={66}
+              navigation={true}
+              modules={[Navigation]}
             >
               {photos.map((photo, index) => (
                 <SwiperSlide key={index}>
@@ -107,30 +121,32 @@ function App() {
             </Swiper>
           </div>
         </section>
-        {apartments.map((apartment, index) => (
-          <section className={styles.apartments}>
-            <div className={cn(styles.container, 'container')}>
-              <div className={cn(styles.wrapper, 'wrapper')}>
-                <div className={styles.apartment} key={index}>
-                  <div className={styles.apartmentSelection}>
-                    <p className={styles.numRooms}>{apartment.numRooms}</p>
-                    <h2 className='color-blue'>{apartment.type}</h2>
-                    <p className={styles.description}>{apartment.description}</p>
-                    <a href='#' className='color-red btn'>Выбрать квартиру</a>
-                  </div>
-                  <div className={styles.scheme}>
-                    <img src={apartment.scheme} alt='' />
-                    <div className={styles.square}>
-                      <span>{apartment.square}</span>
-                      Площадь, м2
+        <div ref={apartmentsSection}>
+          {apartmentsData.map((apartment, index) => (
+            <section className={styles.apartments}>
+              <div className={cn(styles.container, 'container')}>
+                <div className={cn(styles.wrapper, 'wrapper')}>
+                  <div className={styles.apartment} key={index}>
+                    <div className={styles.apartmentSelection}>
+                      <p className={styles.numRooms}>{apartment.numRooms}</p>
+                      <h2 className='color-blue'>{apartment.type}</h2>
+                      <p className={styles.description}>{apartment.description}</p>
+                      <a href='#' className='color-red btn'>Выбрать квартиру</a>
+                    </div>
+                    <div className={styles.scheme}>
+                      <img src={apartment.scheme} alt='' />
+                      <div className={styles.square}>
+                        <span>{apartment.square}</span>
+                        Площадь, м2
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
-        ))}
-        <section className={styles.location}>
+            </section>
+          ))}
+        </div>
+        <section ref={locationSection} className={styles.location}>
           <div className={cn(styles.container, 'container')}>
             <h2>
               Все квартиры находятся в Харькове в <span>компексе ЖК Левада-2</span> от застройщика АО»Трест Жилстрой-1»
@@ -159,11 +175,11 @@ function App() {
             </div>
           </div>
         </section>
-        <section className={styles.host}>
+        <section ref={hostSection} className={styles.host}>
           <div className={cn(styles.container, 'container')}>
             <div className={cn(styles.wrapper, 'wrapper')}>
               <div className={styles.images}>
-                <img src={host} alt='' className={styles.photo} />
+                <img src={hostPhoto} alt='' className={styles.photo} />
                 <img src={room2} alt='' className={cn(styles.room, 'border-radius-50')} />
               </div>
               <div>
@@ -190,12 +206,15 @@ function App() {
           </div>
         </section>
       </main>
-      <footer className={styles.footer}>
+      <footer ref={contactsSection} className={styles.footer}>
         <div className={cn(styles.container, 'container')}>
           <div className={cn(styles.wrapper, 'wrapper')}>
             <div className={styles.contacts}>
               <h2>Контакты</h2>
-              <a href='#'>Харьков
+              <a
+                href='https://www.google.com.ua/maps/@50.3944663,30.4915623,13z'
+                target="_blank"
+              >Харьков
                 <span>Елизаветинская 2Б
             </span>
               </a>
@@ -209,7 +228,7 @@ function App() {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.9676848493627!2d36.239843213082416!3d49.974464571386335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a0633de5be35%3A0xfe34afea8c744246!2z0LLRg9C70LjRhtGPINCE0LvQuNC30LDQstC10YLQuNC90YHRjNC60LAsIDI1LCDQpdCw0YDQutGW0LIsINCl0LDRgNC60ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA2MTAwMA!5e0!3m2!1suk!2sua!4v1682513951550!5m2!1suk!2sua"
                 allowFullScreen="" loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade" className={styles.iframe}></iframe>
+                referrerPolicy="no-referrer-when-downgrade"></iframe>
               <img src={room3} alt='' />
             </div>
           </div>
