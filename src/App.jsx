@@ -106,6 +106,7 @@ function App() {
           <div className={cn(styles.container, 'container')}>
             <h2>Фото квартир с ремонтом</h2>
             <Swiper
+              className={'test'}
               slidesPerView={'auto'}
               centeredSlides={true}
               grabCursor={true}
