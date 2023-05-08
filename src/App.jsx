@@ -11,7 +11,9 @@ import 'swiper/css/navigation';
 import styles from './App.module.scss';
 import viber from './assets/images/icons/viber.svg';
 import facebook from './assets/images/icons/facebook.svg';
+import close from './assets/images/icons/close.svg';
 import logo from './assets/images/logo.png';
+import burger from './assets/images/burger.png';
 import building1 from './assets/images/building1.jpg';
 import buildings1 from './assets/images/buildings1.jpg';
 import hostPhoto from './assets/images/host.jpg';
@@ -77,20 +79,25 @@ function App() {
           <div className={cn(styles.container, 'container')}>
             <div className={cn(styles.wrapper, 'wrapper')}>
               <div className={styles.left}>
-                <img src={logo} alt='' className={styles.logo} />
-                <h3>Квартиры от собственника</h3>
-                <ul>
-                  <li onClick={() => scrollToSection(mainSection)}>Главная</li>
-                  <li onClick={() => scrollToSection(locationSection)}>Расположение</li>
-                  <li onClick={() => scrollToSection(apartmentsSection)}>Квартиры</li>
-                  <li onClick={() => scrollToSection(hostSection)}>Кто <br></br> собственник</li>
-                  <li onClick={() => scrollToSection(contactsSection)}>Контакты</li>
-                </ul>
-                <div className={styles.buttons}>
-                  <a href='#' className={cn('btn color-red', styles.btn)}>Выбрать квартиру</a>
-                  <div className={cn('socials', styles.socials)}>
-                    <a href='#'><img src={viber} alt='' className='icon' /></a>
-                    <a href='#'><img src={facebook} alt='' className='icon' /></a>
+                <div className={styles.top}>
+                  <img src={logo} alt='' className={styles.logo} />
+                  <h3>Квартиры от собственника</h3>
+                  <img src={burger} alt='' className={styles.burger} />
+                </div>
+                <div className={styles.block}>
+                  <ul>
+                    <li onClick={() => scrollToSection(mainSection)}>Главная</li>
+                    <li onClick={() => scrollToSection(locationSection)}>Расположение</li>
+                    <li onClick={() => scrollToSection(apartmentsSection)}>Квартиры</li>
+                    <li onClick={() => scrollToSection(hostSection)}>Кто <br></br> собственник</li>
+                    <li onClick={() => scrollToSection(contactsSection)}>Контакты</li>
+                  </ul>
+                  <div className={styles.buttons}>
+                    <a href='#' className={cn('btn color-red', styles.btn)}>Выбрать квартиру</a>
+                    <div className={cn('socials', styles.socials)}>
+                      <a href='#'><img src={viber} alt='' className='icon' /></a>
+                      <a href='#'><img src={facebook} alt='' className='icon' /></a>
+                    </div>
                   </div>
                 </div>
               </div>
